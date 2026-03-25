@@ -1,0 +1,285 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import crowbarVideo from '~/assets/videos/crowbar1.webm';
+import Button from '~/components/ui/Button.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Монтировка - мы создаём и учим создавать игры - Монтировка',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero>
+    <Fragment slot="title">
+      <span class="text-blue-600 dark:text-white">Монтировка</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        Мы <span class="font-semibold">создаём</span> и <span class="font-semibold">учим</span> создавать игры!
+      </span>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <video class="absolute inset-0 w-full h-full object-contain" autoplay muted loop playsinline onloadedmetadata="this.playbackRate = 0.5">
+        <source src={crowbarVideo} type="video/webm" />
+      </video>
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note title="Новости:" description="Мы переехали на новый сайт!" />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="Ценности"
+    title="Ключевые ценности «Монтировки»"
+    subtitle="Когда мы создавали студию, мы опирались на принципы, которые определяют не только наши проекты, но и подход к работе. Ценности — это не декларация, но принципы нашей работы."
+    items={[
+      {
+        title: 'Развитие геймдева в России',
+        description:
+          'Мы — энтузиасты с горящими глазами и холодной головой. Наша цель — делать вклад в развитие игровой индустрии в России и создавать проекты, которыми не стыдно делиться с миром.',
+        icon: 'tabler:device-gamepad-2',
+      },
+      {
+        title: 'Ориентированность на продук',
+        description:
+          'В стране много талантливых разработчиков — но по-прежнему мало сильных, законченных игр. Мы делаем ставку на результат: доводить идеи до релиза и превращать их в полноценные продукты, а не вечные «почти готово».',
+        icon: 'tabler:device-gamepad',
+      },
+      {
+        title: 'Бесплатное обучение',
+        description:
+          'Мы за открытое образование. Наши курсы бесплатны, потому что для нас важен результат, а не плата за вход. Наша задача — через игру помогать людям осваивать новые знания и навыки.',
+        icon: 'tabler:brand-unity',
+      },
+      {
+        title: 'Игры как часть культуры',
+        description:
+          'Игры давно вышли за рамки развлечения. Это способ исследовать мир, проживать опыт и задавать вопросы, на которые сложно ответить напрямую.',
+        icon: 'tabler:device-nintendo',
+      },
+      {
+        title: 'Геймдизайн и баланс',
+        description:
+          "Хорошая игра — это баланс между механикой, историей и эмоциями. Мы стремимся создавать опыт, который захватывает и не отпускает.",
+        icon: 'tabler:chess-rook',
+      },
+      {
+        title: 'Открытость новым идеям',
+        description:
+          'Мы работаем в глобальной индустрии: общаемся с сообществом разработчиков, следим за трендами и адаптируемся под реальный запрос аудитории.',
+        icon: 'tabler:bulb',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="Проекты"
+    isReversed
+    title="Последние проекты, которые мы успешно реализовали"
+    items={[
+      {
+        title: 'Практика',
+        description:
+          'Курс содержит более 100 задач с интерактивным программированием на C#.',
+      },
+      {
+        title: 'Теория',
+        description:
+          'Большой теоретичекий блок перед каждой темой от самых азов программирования для MVP-паттернов.',
+      },
+      {
+        title: 'Игры!',
+        description:
+          'В ходе изучения курса вы сами создадите 4 игры разной сложности на C#, без можностей движка',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/C1.png',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Курс "​C# для Unity"</h3>
+      Наш первый курс в рамках данной инициативы
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+  <div class="relative bg-blue-50 dark:bg-transparent py-8">
+    <div class="max-w-3xl mx-auto text-center px-4">
+      <div class="flex flex-wrap justify-center gap-4">
+        <Button variant="primary" target="_blank" href="https://stepik.org/course/204351">Поступить на курс</Button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content Widget **************** -->
+
+ <Content
+    items={[
+      {
+        title: 'Открытый исходный код',
+        description:
+          'В книге мы использовали полностью открытый исходный код. Это значит, что вы можете скопировать код игры и сделать на его основе свой проект.',
+      },
+      {
+        title: 'Язык Python',
+        description:
+          'Один из самых популярных языков программирования из-за простой точки входа — Python. Именно на нём написана вся игра и последовательно объясняются принципы работы любого игрового движка.',
+      },
+      {
+        title: 'Большое комьюнити',
+        description:
+          'Код, описанный в книге взял несколько наград крупных IT-сообществ, таких как Сбер.Тех (Звезда GitVerse) и Хабр (победитель технотекста 2023).',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/PyZelda.png',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Книга "​The Legend of PyZelda: Breath of the Snakes"</h3>
+      Книга о том, как создать свою игру на языке программирования Python. В ней мы описываем как пошагово создать аналог игры Zelda.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+  <div class="relative bg-blue-50 dark:bg-transparent py-8">
+    <div class="max-w-3xl mx-auto text-center px-4">
+      <div class="flex flex-wrap justify-center gap-4">
+        <Button variant="secondary" target="_blank" href="https://gitverse.ru/montirovka/The-Legend-of-PyZelda-Breath-of-the-Snakes">Книга на GitVerse</Button>
+        <Button variant="primary" target="_blank" href="~/assets/The_Legend_of_PyZelda_Breath_of_the_Snakes.pdf">Книга в PDF</Button>
+        <Button variant="secondary" target="_blank" href="https://montirovka.itch.io/pyzelda">Игра в браузере</Button>
+      </div>
+    </div>
+  </div>
+  
+<!-- Content Widget **************** -->
+
+ <Content
+    isReversed
+    items={[
+      {
+        title: 'Монолог-подкаст',
+        description:
+          'Такой формат даёт возможность рассказать что думает автор и создать личную связь с аудиторией. Ведущих у нас 2: Настя и Валера.',
+      },
+      {
+        title: 'Философия видеоигр',
+        description:
+          'Настя сооснователь Монтировки, магистр философских наук МГУ и нарративный дизайнер. Настя расскажет как сделать игру интерсной и концептуальной.',
+      },
+      {
+        title: 'Технический процесс',
+        description:
+          'Валера сооснователь Монтировки, системный архитектор, программист и сетевик. Валера расскажет как сделать игру технологичной.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/LOGOPodcast-1.png',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Подкаст</h3>
+      Подкаст "Метафизический зацеп" посвящен историям, крутым мыслям или новостям из индустрии видеоигр.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+  <div class="relative bg-blue-50 dark:bg-transparent py-8">
+    <div class="max-w-3xl mx-auto text-center px-4">
+      <div class="flex flex-wrap justify-center gap-4">
+        <Button variant="primary" target="_blank" href="https://montirovka.mave.digital/">Послушать подкаст</Button>
+      </div>
+    </div>
+  </div>
+
+<!-- Content Widget **************** -->
+
+ <Content
+    items={[
+      {
+        title: 'Открытый исходный код',
+        description:
+          'Все игры имеют полностью открытый исходный код. Это значит, что вы можете скопировать код игры и сделать на его основе свой проект.',
+      },
+      {
+        title: 'Комментарии к коду',
+        description:
+          'Весь код детально задокументирован, что даёт возможность лучше разобраться в механизме игры или механики.',
+      },
+      {
+        title: 'Образовательная часть',
+        description:
+          'Игры, которые мы делаем полностью сделаны в ходе прохождения курсов или прочтения книги. Осталось повторить и научиться делать самостоятельно!',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/Games.png',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Учебные игры</h3>
+      Игры, которые мы делаем в ходе наших курсов и учебных материалов.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+  <div class="relative bg-blue-50 dark:bg-transparent py-8">
+    <div class="max-w-3xl mx-auto text-center px-4">
+      <div class="flex flex-wrap justify-center gap-4">
+        <Button variant="primary" target=_blank href="https://montirovka.itch.io/">Мы на itch.io</Button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Widget **************** -->
+
+  <Features2
+    title="Связаться с нами"
+    id="Контакты"
+    items={[
+      {
+        title: 'Контакты',
+        description: `Вы можете связаться с нами по любым вопросам через почту или присоединиться к комьюнити в Телеграме, чтобы следить за новостями`,
+      },
+      {
+        title: 'Телеграм',
+        description: '<a class="text-blue-600 underline dark:text-muted" target="_blank" href="https://t.me/montirovka_games">Группа в Телеге</a><br/>',
+        icon: 'tabler:brand-telegram',
+      },
+      {
+        title: 'Email',
+        description: '<a class="text-blue-600 underline dark:text-muted" target="_blank" href="mailto:admin@montirovka.com">admin@montirovka.com</a><br/>',
+        icon: 'tabler:mail',
+      }
+    ]}
+  />
+</Layout>

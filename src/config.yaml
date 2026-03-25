@@ -1,0 +1,44 @@
+site:
+  name: Монтировка
+  site: 'https://montirovka.com'
+  base: '/'
+  trailingSlash: false
+
+  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
+
+# Default SEO metadata
+metadata:
+  title:
+    default: Монтировка
+    template: '%s — Монтировка'
+  description: "Сайт инди-студии Монтировка. Мы создаём и учим создавать игры! Хотим развивать игровую индустрию в России."
+  robots:
+    index: true
+    follow: true
+  openGraph:
+    site_name: Монтировка
+    images:
+      - url: '~/assets/images/og-image.jpg'
+        width: 1200
+        height: 630
+    type: website
+  twitter:
+    handle: '@montirovka'
+    site: '@montirovka'
+    cardType: summary_large_image
+
+i18n:
+  language: ru
+  textDirection: ltr
+
+apps:
+  blog:
+    isEnabled: false
+
+analytics:
+  vendors:
+    googleAnalytics:
+      id: null
+
+ui:
+  theme: 'system'
